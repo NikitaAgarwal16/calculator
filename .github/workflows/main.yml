@@ -1,41 +1,27 @@
-name: Java CI Pipeline
-
-# Trigger workflow on push or pull requests to the main branch
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-
-# Define the jobs
 jobs:
   build:
-    runs-on: ubuntu-latest # Use an Ubuntu-based virtual environment
+    runs-on:.
 
+2. **Check the Repository Content**: Make sure ubuntu-latest
     steps:
-      # Step 1: Checkout the repository code
-      - name: Checkout Code
-        uses: actions/checkout@v3
+    - uses: actions/checkout@ the `src` directory and Java files are committed and pushed to the repository.
 
-      # Step 2: Set up JDK
-      - name: Set up Java
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'temurin' # Use the OpenJDK distribution
-          java-version: '17'      # Specify Java version
+3. **Update the Workflow**v2
+    - name: Set up JDK 17
+      uses: actions/setup-java: Modify the GitHub Actions workflow to ensure it correctly checks out@v3
+      with:
+        distribution: 'temurin'
+ the repository and verifies the presence of the `src` directory.
 
-      # Step 3: Compile the Java application
-      - name: Compile Java Application
-        run: javac -d out src/*.java
+Here is an updated workflow        java-version: '17'
+    - name: Compile Java
+ example:
 
-      # Step 4: Run the application (Optional for demo purposes)
-      - name: Run Java Application
-        run: java -cp out Calculator
+```yaml
+name: Java CI Pipeline
 
-      # Step 5: Run Tests
-      - name: Run Unit Tests
-        run: |
-          javac -d out -cp out test/*.java
-          java -cp out org.junit.runner.JUnitCore CalculatorTest
+      run: javac -d out path/to/your/java/files/*.javaon: [push, pull_request]
+
+jobs:
+  build:
+    runs-on
